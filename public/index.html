@@ -3,70 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#060816">
-  <meta name="description" content="LAÜ hazırlık öğrencileri için kişisel devamsızlık takip asistanı.">
-  <title>LAÜ | Devamsızlık Takip</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
+  <meta http-equiv="refresh" content="0; url=./public/">
+  <title>LAÜ Devamsızlık Takip</title>
+  <script>location.replace('./public/');</script>
 </head>
-<body>
-  <div class="aurora aurora-one"></div><div class="aurora aurora-two"></div><div class="noise"></div>
-  <main id="app">
-    <section id="auth-view" class="auth-shell">
-      <div class="brand-panel">
-        <img class="university-logo" src="https://basvuru.eul.edu.tr/basvuru/images/logouni.jpg" alt="Lefke Avrupa Üniversitesi logosu">
-        <p class="eyebrow">PREPARATORY SCHOOL / 2026</p>
-        <h1>Devamsızlığı<br><em>akıllı</em> takip et.</h1>
-        <p class="brand-copy">Dört modülün, tek yıllık tablo. Her yoklamanın sende net bir karşılığı olsun.</p>
-        <div class="stat-orbit"><span>70%</span><small>minimum<br>devam</small><i></i><b>80%</b><small>kanaat notu<br>eşiği</small></div>
-      </div>
-      <div class="auth-card">
-        <div class="auth-head"><span class="pulse-dot"></span><span>SİSTEME ERİŞİM</span></div>
-        <div class="auth-tabs" role="tablist"><button class="tab active" data-auth-tab="login">Giriş yap</button><button class="tab" data-auth-tab="register">Hesap kur</button></div>
-        <form id="login-form" class="auth-form">
-          <label>Kullanıcı adı<input name="username" autocomplete="username" required placeholder="kullaniciadi"></label>
-          <label>Şifre<input name="password" type="password" autocomplete="current-password" required placeholder="••••••••"></label>
-          <button class="button primary" type="submit">Panele giriş <span>→</span></button>
-        </form>
-        <form id="register-form" class="auth-form hidden">
-          <label>Kullanıcı adı<input name="username" autocomplete="username" minlength="3" maxlength="28" required placeholder="kullaniciadi"></label>
-          <label>Şifre<input name="password" type="password" autocomplete="new-password" minlength="8" required placeholder="En az 8 karakter"></label>
-          <label class="legal-check"><input name="legalAccepted" type="checkbox" required><span>Yasal uyarıyı okudum, anladım ve kabul ediyorum.</span></label>
-          <button class="button primary" type="submit">Hesabımı oluştur <span>→</span></button>
-        </form>
-        <button id="open-legal" class="text-button" type="button">Yasal uyarıyı görüntüle</button>
-        <p id="auth-message" class="form-message" aria-live="polite"></p>
-      </div>
-    </section>
-
-    <section id="dashboard-view" class="dashboard hidden">
-      <header class="topbar"><a class="mini-brand" href="#"><span class="mini-mark">L</span><span>LAÜ <b>TRACK</b></span></a><div class="topbar-right"><span id="sync-state" class="sync-state">● Senkronize</span><button id="logout" class="logout" type="button">Çıkış</button></div></header>
-      <div class="dashboard-grid">
-        <aside class="sidebar">
-          <div id="sidebar-profile" class="sidebar-profile"></div>
-          <nav><button class="nav-item active" data-page="tracker"><span>◉</span> Hesaplama Robotu</button><button class="nav-item" data-page="profile"><span>◇</span> Profilim</button></nav>
-          <a class="developer-link" href="https://www.instagram.com/beratengineer/" target="_blank" rel="noreferrer"><span>↗</span><small>GELİŞTİRİCİ</small><strong>@beratengineer</strong></a>
-        </aside>
-        <section class="content">
-          <section id="tracker-page" class="page">
-            <div class="page-title"><div><p class="eyebrow">YILLIK DURUM</p><h2>Devamsızlık <em>radarı</em></h2><p>Ders ve devamsızlıklarını modül modül kaydet. Sonuç yıl geneli üzerinden hesaplanır.</p></div><button id="save-tracker" class="button primary save-button" type="button">Değişiklikleri kaydet <span>↗</span></button></div>
-            <div id="summary-cards" class="summary-cards"></div>
-            <div class="section-heading"><div><p class="eyebrow">MODÜL BİLGİLERİ</p><h3>Dönemini yapılandır</h3></div><span class="year-note">A1 → B2 · Yıllık toplam</span></div>
-            <div id="module-grid" class="module-grid"></div>
-            <div class="clarity-note"><span>✦</span><p><strong>Nasıl çalışır?</strong> Devam oranı dört modülün toplam işlenen ders ve toplam devamsızlık verisiyle hesaplanır. Modüllerdeki 7/8 hafta seçimi planlama görünümü içindir.</p></div>
-          </section>
-          <section id="profile-page" class="page hidden">
-            <div class="page-title"><div><p class="eyebrow">HESABIN</p><h2>Profil <em>kartın</em></h2><p>Kendine ait temel bilgileri güncelle; kayıtların hesabınla birlikte saklanır.</p></div></div>
-            <div class="profile-layout"><form id="profile-form" class="profile-form card-panel"><div class="avatar-field"><div id="avatar-preview" class="avatar-large"></div><label class="upload-button">Profil resmi seç<input id="avatar-input" type="file" accept="image/png,image/jpeg,image/webp" hidden></label><button id="remove-avatar" class="text-button" type="button">Kaldır</button></div><div class="form-fields"><label>Ad<input name="firstName" maxlength="50" placeholder="Adın"></label><label>Soyad<input name="lastName" maxlength="50" placeholder="Soyadın"></label><label>Doğum tarihi<input name="birthDate" type="date"></label><label>Bölüm / sınıf<input name="department" maxlength="100" placeholder="Örn. Hazırlık · A Grubu"></label></div><button class="button primary" type="submit">Profili kaydet <span>↗</span></button><p id="profile-message" class="form-message" aria-live="polite"></p></form><aside class="profile-side"><div class="legal-mini"><span>✦</span><div><strong>Veri sorumluluğu</strong><p>Bu araç resmi yoklama sisteminin yerine geçmez. Son söz üniversitenin resmi kayıtlarındadır.</p><button id="open-legal-2" class="text-button" type="button">Yasal metni aç</button></div></div><div id="admin-entry"></div></aside></div>
-          </section>
-        </section>
-      </div>
-    </section>
-  </main>
-  <dialog id="legal-modal" class="legal-modal"><div class="modal-content"><button class="modal-close" type="button" aria-label="Kapat">×</button><p class="eyebrow">KULLANIM KOŞULU</p><h2>Önemli yasal uyarı</h2><div class="legal-copy"><p>Bu hizmet, geliştiricimiz <strong>Berat Özer</strong> tarafından öğrencilerin devamsızlık durumlarını kendi girdikleri verilerle daha kolay takip edebilmesi ve akıllarında fikir oluşması amacıyla hazırlanmış kişisel bir takip sistemidir.</p><p>Uygulama Lefke Avrupa Üniversitesi’nin, hazırlık okulunun veya herhangi bir kamu kurumunun resmi yoklama platformu değildir; resmî bir dayanağı, yetkisi ya da resmî kayıtlarla otomatik bağlantısı bulunmaz.</p><p>Hesaplamalar tamamen kullanıcının girdiği ders sayısı ve devamsızlık bilgisinden oluşur. Girilen bilgilerin doğruluğu, güncelliği ve bu bilgilere göre alınan her karar yalnızca kullanıcı sorumluluğundadır. Resmî devamsızlık durumunuz için ilgili üniversite birimleri ve resmî öğrenci bilgi sistemini esas almalısınız.</p><p>Bu uygulamayı kullanarak geliştiricinin doğrudan veya dolaylı sonuçlardan sorumlu tutulamayacağını; uygulamanın yalnızca bilgilendirme ve kişisel takip aracı olduğunu kabul etmiş olursunuz.</p></div><button class="button primary modal-accept" type="button">Anladım</button></div></dialog>
-  <template id="module-template"><article class="module-card"><div class="module-top"><span class="module-code"></span><span class="module-weeks"></span></div><h3></h3><div class="module-fields"><label>İşlenen ders sayısı<input class="lessons" type="number" min="0" max="400" inputmode="numeric" placeholder="0"></label><label>Modül süresi<select class="weeks"><option value="7">7 hafta</option><option value="8">8 hafta</option></select></label><label class="absence-label">Yaptığın devamsızlık<input class="absences" type="number" min="0" inputmode="numeric" placeholder="0"></label></div><div class="module-meter"><span></span></div><p class="module-foot"></p></article></template>
-  <script type="module" src="./app.js"></script>
-</body>
+<body><p>Uygulama açılıyor… <a href="./public/">Devam et</a></p></body>
 </html>
