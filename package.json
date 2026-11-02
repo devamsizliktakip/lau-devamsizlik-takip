@@ -1,0 +1,14 @@
+{
+  "name": "lau-devamsizlik-takip",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lefke Avrupa Üniversitesi hazırlık devamsızlık takip uygulaması",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check": "node --check server.js && node --check public/app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
