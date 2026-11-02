@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <div class="aurora aurora-one"></div><div class="aurora aurora-two"></div><div class="noise"></div>
@@ -67,6 +67,6 @@
   </main>
   <dialog id="legal-modal" class="legal-modal"><div class="modal-content"><button class="modal-close" type="button" aria-label="Kapat">×</button><p class="eyebrow">KULLANIM KOŞULU</p><h2>Önemli yasal uyarı</h2><div class="legal-copy"><p>Bu hizmet, geliştiricimiz <strong>Berat Özer</strong> tarafından öğrencilerin devamsızlık durumlarını kendi girdikleri verilerle daha kolay takip edebilmesi ve akıllarında fikir oluşması amacıyla hazırlanmış kişisel bir takip sistemidir.</p><p>Uygulama Lefke Avrupa Üniversitesi’nin, hazırlık okulunun veya herhangi bir kamu kurumunun resmi yoklama platformu değildir; resmî bir dayanağı, yetkisi ya da resmî kayıtlarla otomatik bağlantısı bulunmaz.</p><p>Hesaplamalar tamamen kullanıcının girdiği ders sayısı ve devamsızlık bilgisinden oluşur. Girilen bilgilerin doğruluğu, güncelliği ve bu bilgilere göre alınan her karar yalnızca kullanıcı sorumluluğundadır. Resmî devamsızlık durumunuz için ilgili üniversite birimleri ve resmî öğrenci bilgi sistemini esas almalısınız.</p><p>Bu uygulamayı kullanarak geliştiricinin doğrudan veya dolaylı sonuçlardan sorumlu tutulamayacağını; uygulamanın yalnızca bilgilendirme ve kişisel takip aracı olduğunu kabul etmiş olursunuz.</p></div><button class="button primary modal-accept" type="button">Anladım</button></div></dialog>
   <template id="module-template"><article class="module-card"><div class="module-top"><span class="module-code"></span><span class="module-weeks"></span></div><h3></h3><div class="module-fields"><label>İşlenen ders sayısı<input class="lessons" type="number" min="0" max="400" inputmode="numeric" placeholder="0"></label><label>Modül süresi<select class="weeks"><option value="7">7 hafta</option><option value="8">8 hafta</option></select></label><label class="absence-label">Yaptığın devamsızlık<input class="absences" type="number" min="0" inputmode="numeric" placeholder="0"></label></div><div class="module-meter"><span></span></div><p class="module-foot"></p></article></template>
-  <script src="/app.js"></script>
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
